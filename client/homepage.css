@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background:rgba(0, 0, 0, 0.5) url(/assets/homepage_1.jpeg);
+  background-size: cover;
+  background-position: 50% 20%;
+}
+
+.container {  
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "leftCont leftCont miscTop rightTop rightTop rightTop"
+      "leftCont leftCont miscBottom rightTop rightTop rightTop"
+      "leftCont leftCont rightBottom1 rightBottom1 rightBottom1 rightBottom2"
+      "leftCont leftCont rightBottom1 rightBottom1 rightBottom1 rightBottom2"
+      "leftCont leftCont rightBottom1 rightBottom1 rightBottom1 rightBottom2";
+  }
+  
+.leftCont { 
+    grid-area: leftCont; 
+}
+
+.rightTop { 
+    grid-area: rightTop; 
+}
+
+.rightBottom1 { grid-area: rightBottom1; }
+
+.rightBottom2 { grid-area: rightBottom2; }
+
+.miscTop { 
+    grid-area: miscTop; 
+}
+
+.miscBottom { grid-area: miscBottom; }
+  
+.leftCont, .rightTop, .rightBottom1, .rightBottom2, .miscTop, .miscBottom {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 1ex;
+}
+
+#playlist {
+    width: 98%;
+    height: 95%;
+    border-radius: 20px;
+    margin-left: 1%;
+    margin-top: 1%;
+}
