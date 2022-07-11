@@ -4,7 +4,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background:rgba(0, 0, 0, 0.5) url(/assets/homepage_1.jpeg);
+  background:rgba(0, 0, 0, 0.5) url("/assets/homepage_1.jpeg");
   background-size: cover;
   background-position: 50% 20%;
 }

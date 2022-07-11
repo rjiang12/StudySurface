@@ -33,7 +33,10 @@
           <div class="form-group"></div>
         </form>
         <button id="goLeft" class="off">Login</button>
-        <button onclick="window.location.href='homepage.html'">Sign up</button>
+        <button id="signup" onclick="window.location.href='/auth/google'">Sign up</button>
+        <button type="button" class="login-with-google-btn" onclick="window.location.href='/auth/google'">
+          Sign in with Google
+        </button>
       </div>
     </div>
     <div class="right">
@@ -45,7 +48,10 @@
             <input type="text" placeholder="Password" />
           </div>
           <button id="goRight" class="off">Sign Up</button>
-          <button id="login" type="submit" onclick="window.location.href='homepage.html'">Login</button>
+          <button id="login" type="submit" onclick="window.location.href='/auth/google'">Login</button>
+          <button type="button" class="login-with-google-btn" onclick="window.location.href='/auth/google'">
+            Sign in with Google
+          </button>
         </form>
       </div>
     </div>
