@@ -56,3 +56,13 @@ body {
     margin-left: 1%;
     margin-top: 1%;
 }
+
+#calendar {
+    width: 98%;
+    height: 95%;
+    border-radius: 10px;
+    margin-left: 1%;
+    margin-top: 2%;
+    filter: invert(.9) saturate(0.5) hue-rotate(145deg);
+}
+

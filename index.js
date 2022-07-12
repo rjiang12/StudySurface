@@ -16,6 +16,7 @@ mongoose.connect(process.env.DB_URI, {useUnifiedTopology: true, useNewUrlParser:
 const userSchema = new mongoose.Schema({
     googleId: String, 
     userName: String,
+    email: String,
 });
 
 userSchema.plugin(findOrCreate);
@@ -38,7 +39,11 @@ passport.use(new GoogleStrategy({
         callbackURL: "/auth/google/redirect"
     },
     function(accessToken, refreshToken, profile, cb) {
-        User.findOrCreate({ googleId: profile.id, userName: profile.displayName }, function (err, user) {
+        User.findOrCreate({ 
+            googleId: profile.id, 
+            userName: profile.displayName, 
+            email: profile.emails[0].value 
+        }, function (err, user) {
             return cb(err, user);
         });
     }
