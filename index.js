@@ -72,6 +72,11 @@ app.get("/auth/logout", (req, res) => {
     res.redirect('/');
 });
 
+let checkAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) { return next() }
+    res.redirect("/");
+}
+
 
 // login
 app.get('/', (req, res) => {
@@ -89,7 +94,7 @@ app.get('/login.js', (req, res) => {
 app.use('/assets', express.static('./assets'));
 
 // homepage 
-app.get('/homepage.html', (req, res) => {
+app.get('/homepage.html', checkAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, './client/homepage.html'));
 });
 
