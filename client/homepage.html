@@ -15,10 +15,30 @@
             <iframe src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" id="playlist"></iframe>
         </div>
         <div class="rightBottom1"></div>
-        <div class="rightBottom2">To-do list</div>
+        <div class="rightBottom2">
+            <center><div class="inputs" id="input-div">
+                <input type="text" placeholder="Add a New Task + Enter" id="my-input">
+              </div></center>
+              
+              <div class="to-do-list">
+                
+              </div>
+        </div>
         <div class="miscTop">Timer</div>
-        <div class="miscBottom">Account</div>
+        <div class="miscBottom">
+            <center>
+                <h2>Welcome back</h2>
+            </center>
+            <button id="logout" onclick="logout()">Log out</button>
+        </div>
     </div>
+
 </body>
+<script>
+    function logout() {
+        localStorage.clear();
+        window.location.href='/auth/logout'
+    }
+</script>
 <script src="homepage.js"></script>
 </html>

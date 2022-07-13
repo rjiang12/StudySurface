@@ -7,6 +7,7 @@ body {
   background:rgba(0, 0, 0, 0.5) url("/assets/homepage_1.jpeg");
   background-size: cover;
   background-position: 50% 20%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {  
@@ -41,7 +42,10 @@ body {
     grid-area: miscTop; 
 }
 
-.miscBottom { grid-area: miscBottom; }
+.miscBottom { 
+    grid-area: miscBottom; 
+    position: relative;
+}
   
 .leftCont, .rightTop, .rightBottom1, .rightBottom2, .miscTop, .miscBottom {
     border-radius: 20px;
@@ -66,3 +70,69 @@ body {
     filter: invert(.9) saturate(0.5) hue-rotate(145deg);
 }
 
+.to-do-list {
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.to-do-list::-webkit-scrollbar {
+    display: none;
+}
+
+#my-input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 3vh;
+    width: 86%;
+    margin-top: 5%;
+    border-radius: 6px;
+    text-indent: 5%;
+    /*box-shadow: 0 0 5px 3px rgba(0,0,0,0.1);*/
+}
+
+.task {
+    margin-left: 5%;
+    display: inline-flex;
+    width: 90%;
+    padding-top: 1%;
+    
+}
+
+.task span {
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+}
+
+.task span p {
+    margin-left: 5%;
+    width: 90%;
+    resize: none;
+    overflow-wrap: break-word;
+    color: black;
+}
+
+.delete {
+    width: 10%;
+    border-radius: 0 10px 10px 0; 
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: red;
+}
+
+#logout {
+    background: #f2eee3;
+    border-radius: 10px;
+    padding: 1%;
+    position: absolute;
+    left: 60%;
+    top: 70%;
+}
+
+.miscBottom h2 {
+    font-weight: normal;
+    color: #f2eee3;
+}

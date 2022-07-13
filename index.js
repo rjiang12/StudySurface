@@ -91,6 +91,7 @@ let checkAuthenticated = (req, res, next) => {
 
 // login
 app.get('/', (req, res) => {
+    if(checkAuthenticated) res.redirect('/homepage.html')
     res.sendFile(path.resolve(__dirname, './client/login.html'));
 });
 
