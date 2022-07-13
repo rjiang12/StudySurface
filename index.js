@@ -1,7 +1,8 @@
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy; 
@@ -15,6 +16,10 @@ const User = models.User;
 const app = express();
 
 mongoose.connect(process.env.DB_URI, {useUnifiedTopology: true, useNewUrlParser: true}); 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 
 // google auth
 app.use(cookieSession({
@@ -37,6 +42,10 @@ passport.use(new GoogleStrategy({
             userName: profile.displayName, 
             email: profile.emails[0].value 
         }, function (err, user) {
+            if(user && !err) {
+                userEmail = user.email; 
+                userName = user.userName;
+            }
             return cb(err, user);
         });
     }
@@ -58,24 +67,21 @@ app.get("/auth/google", passport.authenticate("google", {
 }));
 
 let userEmail; 
+let userName; 
 
 app.get("/auth/google/redirect", passport.authenticate('google'), (req, res) => {
-    userEmail = res.req.user.email;
-    ensureEmail(); 
-    function ensureEmail() {
-        if(userEmail !== undefined) {
-            res.redirect(path.resolve(__dirname, '/homepage.html'));
-        }
-        else {
-            setTimeout(ensureEmail, 0.25);
-        }
-    }
+    //console.log(userEmail);
+    res.cookie('email', encodeURIComponent(userEmail), {maxAge: 24 * 60 * 60 * 1000});
+    res.cookie('firstname', encodeURIComponent(userName), {maxAge: 24 * 60 * 60 * 1000});
+    res.redirect(path.resolve(__dirname, '/homepage.html'));
 });
 
 app.get("/auth/logout", (req, res) => {
     req.logout(function(err) {
         if (err) { return next(err); }
         req.session = null; 
+        res.clearCookie('email'); 
+        res.clearCookie('firstname');
         res.redirect('/');
     });
     req.session = null; 
@@ -91,7 +97,6 @@ let checkAuthenticated = (req, res, next) => {
 
 // login
 app.get('/', (req, res) => {
-    if(checkAuthenticated) res.redirect('/homepage.html')
     res.sendFile(path.resolve(__dirname, './client/login.html'));
 });
 
@@ -132,5 +137,3 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, () => console.log('listening on port: 3000'));
-
-module.exports = { userEmail }; 
