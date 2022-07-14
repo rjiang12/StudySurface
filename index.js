@@ -84,6 +84,8 @@ app.get("/auth/logout", (req, res) => {
         res.clearCookie('firstname');
         res.redirect('/');
     });
+    res.clearCookie('email'); 
+    res.clearCookie('firstname');
     req.session = null; 
     res.redirect('/');
 });
