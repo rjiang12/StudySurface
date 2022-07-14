@@ -87,27 +87,27 @@ if(document.querySelector('.container')) {
 
     // background change buttons
     document.querySelector('#desk').addEventListener('click', () => {
-      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("/assets/homepage_1.jpeg")';
+      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("../assets/homepage_1.jpeg")';
       document.body.style.backgroundSize = 'cover';
     });
 
     document.querySelector('#forest').addEventListener('click', () => {
-      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("/assets/forest.webp")';
+      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("../assets/forest.webp")';
       document.body.style.backgroundSize = 'cover';
     });
 
     document.querySelector('#city').addEventListener('click', () => {
-      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("/assets/city.webp")';
+      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("../assets/city.webp")';
       document.body.style.backgroundSize = 'cover';
     });
 
     document.querySelector('#mountain').addEventListener('click', () => {
-      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("/assets/mountain.jpeg")';
+      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("../assets/mountain.jpeg")';
       document.body.style.backgroundSize = 'cover';
     });
 
     document.querySelector('#stars').addEventListener('click', () => {
-      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("/assets/stars.jpeg")';
+      document.body.style.background = 'rgba(0, 0, 0, 0.5) url("../assets/stars.jpeg")';
       document.body.style.backgroundSize = 'cover';
     });
 
