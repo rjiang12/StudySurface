@@ -78,6 +78,7 @@ if(document.querySelector('.container')) {
 
     // greet user by first name
     document.querySelector('.userInfo').innerHTML += `
+    
       <center>
         <p>Welcome back, ${name} </p>
       </center>
@@ -156,7 +157,32 @@ if(document.querySelector('.container')) {
       }
     });
     
-    
-    
+    function getTime() {
+      let date = new Date();
+      let hh = date.getHours();
+      let mm = date.getMinutes();
+      let ss = date.getSeconds(); 
+      let period = 'AM';
+
+      if(hh >= 12) period = 'PM';
+      else period = 'AM'; 
+
+      hh = (hh < 10) ? "0" + hh : hh;
+      mm = (mm < 10) ? "0" + mm : mm;
+      ss = (ss < 10) ? "0" + ss : ss;
+
+      let time = hh + ':' + mm + ':' + ss + ' ' + period;
+
+      let inner = `<center id="tick"><center><div id="hours">${hh}</div></center>
+      <center><div id="minutes">${mm}</div></center>
+      <center><div id="period"> ${period}</div></center></center>`
+
+      document.querySelector('.misc').innerHTML = inner; 
+
+      setTimeout(function() {getTime()}, 1000);
+    }
+
+    getTime();
 }
+
     

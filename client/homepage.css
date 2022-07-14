@@ -238,3 +238,34 @@ body {
 .hide {
     display: none;
 }
+
+#hours, #minutes, #period {
+    display: block;
+    color:#f2eee3;
+    
+}
+
+#hours, #minutes {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+#hours, #minutes {
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+#period{ 
+    margin-top: 20%;
+}
+
+#tick {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 70%;
+    width: 50%;
+    border-radius: 20px;
+    margin-top: 10%;
+    margin-left: 10%;
+    padding-top: 10%;
+}
+
