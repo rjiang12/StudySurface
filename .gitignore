@@ -1,6 +1,6 @@
 /maybe
 .env
 node_modules 
-/.parcel-cache
+.parcel-cache/
 /dist
 .proxyrc.json
