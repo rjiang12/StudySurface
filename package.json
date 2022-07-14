@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js & parcel ./client/login.html"
+    "start": "node index.js & parcel ./client/login.html && parcel ./client/homepage.html"
   },
   "repository": {
     "type": "git",

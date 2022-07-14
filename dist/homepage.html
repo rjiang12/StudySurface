@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/homepage.f150609c.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <div class="container">
+        <div class="leftCont">
+            <div class="userInfo"></div>
+            <div class="toggleCtrl">
+                <h2><center>Show/hide tools:</center></h2>
+                <div class="toggles">
+                    <div class="toggleTimer" id="toggleTimer"><button>Clock</button></div>
+                    <div class="toggleMusic" id="toggleMusic"><button>Music</button></div>
+                    <div class="toggleCalendar" id="toggleCalendar"><button>Calendar</button></div>
+                    <div class="toggleList" id="toggleList"><button>To-do List</button></div>
+                </div>
+            </div>
+            <div class="bgCtrl">
+                <button id="desk"><p>Desk</p></button>
+                <button id="city"><p>City</p></button>
+                <button id="forest"><p>Forest</p></button>
+                <button id="mountain"><p>Mountain</p></button>
+                <button id="stars"><p>Stars</p></button>
+                <button id="blank"><p>Blank</p></button>
+            </div>
+          </div>
+        <div class="rightTop"></div>
+        <div class="rightBottom1"></div>
+        <div class="rightBottom2">
+            <center>
+                <div class="inputs" id="input-div">
+                    <input type="text" placeholder="Add a New Task + Enter" id="my-input">
+                </div>
+            </center>
+              <div class="to-do-list"></div>
+        </div>
+        <div class="misc" onload="getTime()"></div>
+        </div>
+    
+</body>
+<script>function logout() {
+    localStorage.clear();
+    window.location.href = "/auth/logout";
+}
+
+</script>
+<script src="/homepage.0a46cb63.js"></script>
+</html>

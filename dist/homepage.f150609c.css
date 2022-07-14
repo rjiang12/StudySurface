@@ -1,0 +1,259 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #00000080 url("homepage_1.cd608687.jpeg") 50% 20% / cover;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  grid-template: "leftCont leftCont misc rightTop rightTop rightTop" 1fr
+                 "leftCont leftCont misc rightTop rightTop rightTop" 1fr
+                 "leftCont leftCont rightBottom1 rightBottom1 rightBottom1 rightBottom2" 1fr
+                 "leftCont leftCont rightBottom1 rightBottom1 rightBottom1 rightBottom2" 1fr
+                 "leftCont leftCont rightBottom1 rightBottom1 rightBottom1 rightBottom2" 1fr
+                 / 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 0;
+  display: grid;
+}
+
+.leftCont {
+  grid-template: "userInfo" 1fr
+                 "toggleCtrl" 2fr
+                 "bgCtrl" 2fr
+                 / 1fr;
+  grid-area: leftCont;
+  gap: 0;
+  display: grid;
+  overflow: hidden;
+}
+
+.userInfo, .toggleCtrl, .bgCtrl {
+  background-color: #ffffff80;
+  border-radius: 20px;
+  margin: .5em;
+}
+
+.userInfo {
+  grid-area: userInfo;
+  margin-bottom: 0;
+}
+
+.userInfo p {
+  color: #f2eee3;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.toggleCtrl {
+  grid-area: toggleCtrl;
+}
+
+.toggles {
+  height: 100%;
+  height: 100%;
+  width: 100%;
+  grid-template: "toggleTimer toggleMusic" 1fr
+                 "toggleCalendar toggleList" 1fr
+                 / 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 0;
+  display: grid;
+}
+
+.toggleTimer, .toggleMusic, .toggleCalendar, .toggleList {
+  width: 40%;
+  height: 40%;
+}
+
+.toggleTimer button, .toggleMusic button, .toggleCalendar button, .toggleList button {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  background-color: #ffffff80;
+  border-color: #00000080;
+  border-radius: 10px;
+  margin-left: 75%;
+}
+
+.toggleTimer button:hover, .toggleMusic button:hover, .toggleCalendar button:hover, .toggleList button:hover {
+  background-color: #f2eee3;
+}
+
+.toggleTimer {
+  grid-area: toggleTimer;
+}
+
+.toggleMusic {
+  grid-area: toggleMusic;
+}
+
+.toggleCalendar {
+  grid-area: toggleCalendar;
+}
+
+.toggleList {
+  grid-area: toggleList;
+  margin-bottom: 10%;
+}
+
+.bgCtrl {
+  grid-area: bgCtrl;
+  justify-content: space-evenly;
+  margin-top: 0;
+  display: flex;
+}
+
+.bgCtrl button {
+  width: 16.6%;
+  background-color: #ffffff80;
+  border-style: outset;
+}
+
+.bgCtrl button:hover {
+  background-color: #f2eee3;
+}
+
+.bgCtrl button p {
+  transform: rotate(-90deg);
+}
+
+.bgCtrl button:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.bgCtrl button:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+.rightTop {
+  grid-area: rightTop;
+}
+
+.rightBottom1 {
+  grid-area: rightBottom1;
+}
+
+.rightBottom2 {
+  grid-area: rightBottom2;
+}
+
+.misc {
+  grid-area: misc;
+}
+
+.leftCont, .rightTop, .rightBottom1, .rightBottom2, .misc {
+  background-color: #00000080;
+  border-radius: 20px;
+  margin: 1ex;
+}
+
+#playlist {
+  width: 98%;
+  height: 95%;
+  border-radius: 20px;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+#calendar {
+  width: 98%;
+  height: 95%;
+  filter: invert(.9) saturate(.5) hue-rotate(145deg);
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+.to-do-list {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.to-do-list::-webkit-scrollbar {
+  display: none;
+}
+
+#my-input {
+  height: 3vh;
+  width: 86%;
+  text-indent: 5%;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 6px;
+  outline: none;
+  margin-top: 5%;
+}
+
+.task {
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 1%;
+  display: inline-flex;
+}
+
+.task span {
+  width: 100%;
+  resize: none;
+  background-color: #ffffff80;
+  border: 1px solid #000;
+  border-radius: 10px 0 0 10px;
+}
+
+.task span p {
+  width: 90%;
+  resize: none;
+  overflow-wrap: break-word;
+  color: #000;
+  margin-left: 5%;
+}
+
+.delete {
+  width: 10%;
+  color: red;
+  background-color: #ffffff80;
+  border: 1px solid #000;
+  border-radius: 0 10px 10px 0;
+}
+
+#logout {
+  background: #f2eee3;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+.hide {
+  display: none;
+}
+
+#hours, #minutes, #period {
+  color: #f2eee3;
+  display: block;
+}
+
+#hours, #minutes {
+  margin-top: 20%;
+  margin-bottom: 20%;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+#period {
+  margin-top: 20%;
+}
+
+#tick {
+  height: 70%;
+  width: 50%;
+  background-color: #ffffff80;
+  border-radius: 20px;
+  margin-top: 10%;
+  margin-left: 10%;
+  padding-top: 10%;
+}
+
+/*# sourceMappingURL=homepage.f150609c.css.map */
