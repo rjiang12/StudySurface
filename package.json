@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js & parcel ./client/login.html"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/rjiang12/StudySurface#readme",
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "@parcel/transformer-sass": "^2.6.2",
+    "http-proxy-middleware": "^2.0.6",
+    "nodemon": "^2.0.19",
+    "parcel": "^2.6.2"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
